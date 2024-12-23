@@ -1,7 +1,11 @@
 body {
+    background-color: whitesmoke;
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .hidden {
@@ -12,4 +16,26 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: green;
+}
+
+button {
+    font-size: 20px;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin-top: 20px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    #message {
+        font-size: 20px;
+    }
 }

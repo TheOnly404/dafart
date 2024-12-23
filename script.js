@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('button').addEventListener('click', checkPassword);
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const buttonIndex = event.target.textContent === 'No' ? 2 : 1;
+            if (buttonIndex === 1) {
+                playSound();
+            } else {
+                showMessage();
+            }
+        });
+    });
 });
 
-function checkPassword() {
-    const password = document.getElementById('password').value;
-    if (password === 'correctpassword') {
-        document.getElementById('password-form').classList.add('hidden');
-        document.getElementById('message').classList.remove('hidden');
-    } else {
-        alert('Incorrect password. Please try again.');
-    }
+function showMessage() {
+    document.getElementById('button-form').classList.add('hidden');
+    document.getElementById('message').classList.remove('hidden');
+}
+
+function playSound() {
+    document.getElementById('sound').play();
 }
