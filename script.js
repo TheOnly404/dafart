@@ -21,7 +21,10 @@ function showMessage() {
 
 function playSound() {
     const sound = document.getElementById('sound');
-    sound.play().catch(error => {
-        console.error('Error playing sound:', error);
-    });
+    // Check for user interaction before playing sound
+    if (sound.paused) {
+        sound.play().catch(error => {
+            console.error('Error playing sound:', error);
+        });
+    }
 }
