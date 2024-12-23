@@ -23,6 +23,9 @@ button {
     padding: 15px 30px;
     margin: 10px;
     cursor: pointer;
+    -webkit-appearance: none; /* Remove default button styling in Safari */
+    -moz-appearance: none;
+    appearance: none;
 }
 
 @media (max-width: 600px) {

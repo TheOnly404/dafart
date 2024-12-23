@@ -17,5 +17,8 @@ function showMessage() {
 }
 
 function playSound() {
-    document.getElementById('sound').play();
+    const sound = document.getElementById('sound');
+    sound.play().catch(error => {
+        console.error('Error playing sound:', error);
+    });
 }
