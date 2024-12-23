@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    const sound = document.getElementById('sound');
+    sound.load(); // Ensure the audio file is loaded
+
     document.querySelectorAll('button').forEach(button => {
         button.addEventListener('click', (event) => {
             const buttonIndex = event.target.textContent === 'No' ? 2 : 1;
