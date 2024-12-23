@@ -9,7 +9,38 @@
     <meta name="format-detection" content="telephone=no">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sound = document.getElementById('sound');
+            sound.load(); // Ensure the audio file is loaded
+
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const buttonIndex = event.target.textContent === 'No' ? 2 : 1;
+                    if (buttonIndex === 1) {
+                        playSound();
+                    } else {
+                        showMessage();
+                    }
+                });
+            });
+        });
+
+        function showMessage() {
+            document.getElementById('button-form').classList.add('hidden');
+            document.getElementById('message').classList.remove('hidden');
+        }
+
+        function playSound() {
+            const sound = document.getElementById('sound');
+            // Check for user interaction before playing sound
+            if (sound.paused) {
+                sound.play().catch(error => {
+                    console.error('Error playing sound:', error);
+                });
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
