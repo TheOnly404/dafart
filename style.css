@@ -26,6 +26,14 @@ button {
     -webkit-appearance: none; /* Remove default button styling in Safari */
     -moz-appearance: none;
     appearance: none;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 @media (max-width: 600px) {
