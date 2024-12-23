@@ -33,6 +33,8 @@
 
         function playSound() {
             const sound = document.getElementById('sound');
+            // Set volume to maximum
+            sound.volume = 1.0;
             // Check for user interaction before playing sound
             if (sound.paused) {
                 sound.play().catch(error => {
